@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Frontend using Import Maps</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="importmap">
+    {
+        "imports": {
+            "react": "https://cdn.skypack.dev/react@18",
+            "react-dom": "https://cdn.skypack.dev/react-dom@18",
+            "our-react-component": "https://graphan.github.io/micro-react-component-using-vite/our-react-component.es.js"
+        }
+    }
+    </script>
+    <script type="module">
+        import React from 'react';
+        import ReactDOM from 'react-dom';
+        import { App } from 'our-react-component';
+    
+        ReactDOM.render(React.createElement(App), document.getElementById('root'));
+    </script>
+</body>
+</html> 
